@@ -1,0 +1,26 @@
+# My Solution
+## Model
+- LightGBM
+    - parameterなどはLightGBM訓練用ノートブックを参照
+    - [baseにしたノートブック](https://www.kaggle.com/zephyrwang666/riiid-lgbm-bagging2-1)
+- Feature Engineering
+    - 上記ノートブックをもとにcumsumなどで特徴量を作成
+    - 講義の時間も考慮したlagtime: lagtime_in_lecture
+    - 各ユーザーのその時点でのattempt_noの平均: attempt_no_mean
+    - 各ユーザーの問題ごと(content_id)のlagtime: content_lagtime
+    - 各ユーザーのpartごとのlagtime: part_lagtime
+    - 各ユーザーのpartごとの正答率: user_part_correctness
+    - 各ユーザーがパート別に講義を受けた回数: user_lecture_sum
+    - 各ユーザーがパート別に講義を受けた回数をユーザーの全行countで割った値: user_lecture_lv
+- AWS
+    - LGBの場合、kaggle上ではメモリ不足(16GB)のため、EC2上にてtrain
+    - [AWS Deep Learning AMI](https://docs.aws.amazon.com/ja_jp/dlami/latest/devguide/what-is-dlami.html)を使用
+        - SAKTモデル(pytorchベース)もここで訓練させようと思っていた(kaggle上で全件で学習可能)
+        - 簡単にjupyter notebookサーバーを立てられる
+    - インスタンスタイプ: r5a.8xlarge
+- SAKT
+    - [こちらのノートブックがベース](https://www.kaggle.com/manikanthr5/riiid-sakt-model-training-public)
+    - Attention layerを使用したNNモデル
+    - 多くの時間を確保できず、こちらのモデルはほとんど改良を加えられていない
+    - MAX_SEQの値を大きくした程度
+    - LGBとのアンサンブルでスコアがo.oo5~7近く変わるため使用
