@@ -54,5 +54,8 @@
     - [Elo Rating](https://www.kaggle.com/stevemju/riiid-simple-elo-rating)
     - [TrueSkill](https://www.kaggle.com/neinun/understanding-microsoft-trueskill-with-riiid)
 
-
+# 4. Paper
+- [SAINT+: Integrating Temporal Features for EdNet Correctness Prediction](https://arxiv.org/abs/2010.12042)
+- [A Self-Attentive model for Knowledge Tracing](https://arxiv.org/abs/1907.06837)
+- [Deep Knowledge Tracing](https://arxiv.org/abs/1506.05908)
 
