@@ -17,6 +17,8 @@
 - ./notebooks/riiid-self-attention-transformer.ipynb: SAKTモデル訓練用
 - ./notebooks/inference-riiid-lgbm-bagging2-1-with-part.ipynb: 推論用
     - こちらのみkaggle上ではメモリ不足のためEC2でメモリ256GBのインスタンスを立てて実行しました。
+- ./notebooks/saint_plus.ipynb
+    - [SAINT+論文](https://arxiv.org/pdf/2010.12042.pdf)を元に実装したもの
 
 ## データ
 - [こちらから](https://www.kaggle.com/c/riiid-test-answer-prediction/data)
